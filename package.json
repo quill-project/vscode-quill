@@ -22,7 +22,7 @@
 			{
 				"language": "quill",
 				"scopeName": "source.quill",
-				"path": "./syntaxes/quill.tmlanguage"
+				"path": "./syntaxes/quill.tmLanguage.json"
 			}
 		]
 	}
