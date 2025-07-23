@@ -261,25 +261,29 @@
                 "name": "keyword.operator.quill"
             },
             {
-                "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\[.*?\\]\\s*\\(|\\()",
+                "match": "(?<!\\[\\s*)\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=(?:\\[.*?\\])?\\()",
+                "name": "entity.name.function.quill"
+            },
+            {
+                "begin": "\\b(?<=[a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\[)",
                 "beginCaptures": {
-                    "1": { "name": "entity.name.function.quill" },
-                    "2": { "name": "punctuation.brackets.quill" }
+                    "1": { "name": "punctuation.brackets.quill" }
                 },
                 "patterns": [
                     {
                         "include": "#types"
                     }
                 ],
-                "end": "(\\]|\\()",
+                "end": "(\\])",
                 "endCaptures": {
                     "1": { "name": "punctuation.brackets.quill" }
                 }
             },
             {
-                "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\[.*?\\])",
+                "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(\\[)",
                 "beginCaptures": {
-                    "1": { "name": "variable.other.quill" }
+                    "1": { "name": "variable.other.quill" },
+                    "2": { "name": "punctuation.brackets.quill" }
                 },
                 "patterns": [
                     {
